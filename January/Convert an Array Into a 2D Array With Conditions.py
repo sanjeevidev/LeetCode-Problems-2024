@@ -1,8 +1,7 @@
 class Solution:
     def findMatrix(self, v: List[int]) -> List[List[int]]:
         um = {}
-        for i in v:
-            um[i] = um.get(i, 0) + 1
+        for i in v: um[i] = um.get(i, 0) + 1
         
         ans = []
         while um:
@@ -15,6 +14,5 @@ class Solution:
                     to_erase.append(f)
                 um[f] = s
             ans.append(temp)
-            for i in to_erase:
-                del um[i]
+            for i in to_erase: del um[i]
         return ans
